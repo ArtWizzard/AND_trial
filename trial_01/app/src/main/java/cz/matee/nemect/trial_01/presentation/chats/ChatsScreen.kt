@@ -1,7 +1,6 @@
 package cz.matee.nemect.trial_01.presentation.chats
 
 
-import android.content.res.Resources.Theme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,8 +13,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -25,13 +22,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import cz.matee.nemect.trial_01.R
 import cz.matee.nemect.trial_01.Screens
-import cz.matee.nemect.trial_01.database.Conversation
 import cz.matee.nemect.trial_01.database.User
 import cz.matee.nemect.trial_01.database.UserChatPreview
-import cz.matee.nemect.trial_01.database.UserMessage
-import cz.matee.nemect.trial_01.ui.theme.HeaderTextColor
-import cz.matee.nemect.trial_01.ui.theme.NormalTextColor
-import cz.matee.nemect.trial_01.ui.theme.NoteTextColor
+import cz.matee.nemect.trial_01.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -45,17 +38,18 @@ fun ChatsScreen ( navController: NavController ) {
 
     Scaffold(
         topBar = {
-             TopAppBar(
-                 title = {
-                     Text(
-                         modifier = Modifier
-                             .padding(0.dp)
-                             .background(Color.Transparent),
-                         text = stringResource(id = R.string.chats_header),
-                         textAlign = TextAlign.Start,
-                         fontWeight = FontWeight.Bold,
-                         fontSize = 30.sp)
-                         },
+            TopAppBar(
+                title = {
+                    Text(
+                        color = MaterialTheme.colorScheme.surfaceTint,
+                        modifier = Modifier
+                            .padding(0.dp)
+                            .background(Color.Transparent),
+                        text = stringResource(id = R.string.chats_header),
+                        textAlign = TextAlign.Start,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 30.sp)
+                        },
              )
         },
         content = {
@@ -74,7 +68,8 @@ fun ChatsScreen ( navController: NavController ) {
                     }
                 }
             }
-        }
+        },
+        containerColor = MaterialTheme.colorScheme.surface
     )
 }
 
@@ -83,7 +78,7 @@ fun ConvPreview ( preview: UserChatPreview ) {
     Row (
         modifier = Modifier
             .padding(0.dp)
-            .background(MaterialTheme.colorScheme.background)
+            .background(MaterialTheme.colorScheme.surface)
             .fillMaxWidth(),
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
@@ -107,26 +102,17 @@ fun ConvPreview ( preview: UserChatPreview ) {
         Column (
             modifier = Modifier
                 .padding(start = 5.dp),
-//                .background(Color.Transparent),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Center
         ){
             Text(
-//                modifier = Modifier
-//                    .padding(0.dp)
-//                    .background(Color.Transparent),
                 text = preview.user.name,
-                color = NormalTextColor,
-//                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.surfaceTint,
                 fontWeight = FontWeight.Bold,
                 fontSize = 18.sp)
             Text(
-//                modifier = Modifier
-//                    .padding(0.dp)
-//                    .background(Color.Transparent),
                 text = preview.lastMessage,
-                color = NoteTextColor,
-//                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.surfaceTint,
                 fontWeight = FontWeight.Normal,
                 fontSize = 15.sp
             )
