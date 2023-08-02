@@ -16,36 +16,95 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = White1,
-    secondary = White3,
-    tertiary = White7,
-    background = White1,
+    // 60 100 20 90 ??
+    primary = Purple60,
+    onPrimary = Purple100,
+    primaryContainer = Purple20,
+    onPrimaryContainer = Purple90,
+//    inversePrimary = ,
 
-    onPrimary = WhiteF,
-    onSecondary = WhiteB,
-    onTertiary = WhiteA,
+    //
+    secondary = Blue60,
+    onSecondary = Blue100,
+    secondaryContainer = Blue20,
+    onSecondaryContainer = Blue90,
+
+    //
+    tertiary = White60,
+    onTertiary = White100,
+    tertiaryContainer = White20,
+    onTertiaryContainer = White90,
+
+    //
+    background = White20,
+    onBackground = White100,
+
+    //
+    surface = Purple10,
+    onSurface = Purple100,
+    surfaceVariant = Purple20,
+    onSurfaceVariant = Purple100,
+    surfaceTint = Purple80,
+    inverseSurface = Purple20,
+    inverseOnSurface = Purple100,
+
+    //
+//    error = ,
+//    onError = ,
+//    errorContainer = ,
+//    onErrorContainer = ,
+
+    //
+    outline = White50,
+    outlineVariant = White20,
+
+    //
+//    scrim = ,
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = WhiteF,
-    secondary = WhiteB,
-    tertiary = White7,
-    background = WhiteF,
+    // 40 100 90 10 ??
+    primary = Blue40,
+    onPrimary = Blue100,
+    primaryContainer = Blue90,
+    onPrimaryContainer = Blue10,
+//    inversePrimary = ,
 
-    onPrimary = White1,
-    onSecondary = White3,
-    onTertiary = White3,
+    secondary = Purple40,
+    onSecondary = Purple100,
+    secondaryContainer = Purple90,
+    onSecondaryContainer = Purple10,
 
+    tertiary = White40,
+    onTertiary = White100,
+    tertiaryContainer = White90,
+    onTertiaryContainer = White10,
 
-//    /* Other default colors to override
-//    background = White,
-//    surface = White,
-//    onPrimary = Color.White,
-//    onSecondary = Color.White,
-//    onTertiary = Color.White,
-//    onBackground = Color(0xFF1C1B1F),
-//    onSurface = Color(0xFF1C1B1F),
-//    */
+    //
+    background = White100,
+    onBackground = White0,
+
+    // 100 0 90 0
+    surface = Blue100,
+    onSurface = Blue0,
+    surfaceVariant = Blue90,
+    onSurfaceVariant = Blue0,
+    surfaceTint = Blue20,
+    inverseSurface = Blue80,
+    inverseOnSurface = Blue0,
+
+    //
+//    error = ,
+//    onError = ,
+//    errorContainer = ,
+//    onErrorContainer = ,
+
+    //
+    outline = White50,
+    outlineVariant = White80,
+
+    //
+//    scrim = ,
 )
 
 @Composable
