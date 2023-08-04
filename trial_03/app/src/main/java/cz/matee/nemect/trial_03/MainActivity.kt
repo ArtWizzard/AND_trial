@@ -3,7 +3,6 @@ package cz.matee.nemect.trial_03
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import cz.matee.nemect.trial_03.presentation.home.HomeScreen
 import cz.matee.nemect.trial_03.ui.theme.Trial_03Theme
 
 class MainActivity : ComponentActivity() {
@@ -11,7 +10,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Trial_03Theme {
-                HomeScreen()
+                Navigation()
             }
         }
     }
