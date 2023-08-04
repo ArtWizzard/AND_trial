@@ -7,6 +7,7 @@
     <string name="LibraryScreen">Your Library</string>
     <string name="PremiumScreen">Premium</string>
     <string name="SettingsScreen">Settings</string>
+    <string name="RecentScreen">Recently played</string>
 
 <!--    Login screen text buttons   -->
     <string name="IntroDescription">Truly deadly music</string>
