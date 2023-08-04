@@ -8,27 +8,55 @@ import androidx.compose.ui.unit.sp
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    bodyLarge = TextStyle(
+    // Sections
+    headlineLarge = TextStyle(
         fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Bold,
         fontSize = 22.sp,
         lineHeight = 28.sp,
         letterSpacing = 0.sp
     ),
+
+    // names of albs
+    titleLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 21.sp,
+        letterSpacing = 0.sp
+    ),
+    // button description
     labelSmall = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
+        fontSize = 8.sp,
+        lineHeight = 14.sp,
         letterSpacing = 0.5.sp
     )
-    */
+
 )
+
+// ENORMOUS TEXT DISPLAYED
+// displayLarge
+// displayMedium
+// displaySmall
+
+// SCREENS
+// headlineLarge
+// headlineMedium
+// headlineSmall
+
+// PARAGRAPH'S TITLE
+// titleLarge
+// titleMedium
+// titleSmall
+
+// PARAGRAPH
+// bodyLarge
+// bodyMedium
+// bodySmall
+
+// BUTTONS
+// labelLarge
+// labelMedium
+// labelSmall
