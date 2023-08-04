@@ -1,6 +1,5 @@
 package cz.matee.nemect.trial_03.presentation.home
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -8,37 +7,32 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
-import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import cz.matee.nemect.trial_03.R
+import cz.matee.nemect.trial_03.Screen
 import cz.matee.nemect.trial_03.ui.components.Alb
 import cz.matee.nemect.trial_03.ui.components.IconComponent
 import cz.matee.nemect.trial_03.ui.theme.Typography
-import kotlin.math.roundToInt
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    homeScreenVM: HomeScreenVM = HomeScreenVM()
+    homeScreenVM: HomeScreenVM,
+    navController: NavController
 ) {
     // Temporary data
     val titles = listOf("JT Music", "Pop Right Now", "TH3 DARP", "Isekai D&D", "Jednicky a nuly")
     val sections = listOf("Recently played", "Episodes for you", "Your top mixes", "JT Music", "Popular artists")
 
-    val chips by remember {
+    val chips by rememberSaveable {
         mutableStateOf( homeScreenVM.chips )
     }
-
-//    val topAppBarHeight = 30.dp
 
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(rememberTopAppBarState())     // for collapsing appbars
 
@@ -57,11 +51,20 @@ fun HomeScreen(
                         modifier = Modifier
                             .width(150.dp)
                     ) {
-                        IconComponent(painter = R.drawable.ic_notification, onClick = { /*TODO*/ }, contentDescriptor = "Notification",
+                        IconComponent(
+                            painter = R.drawable.ic_notification,
+                            onClick = { navController.navigate( Screen.NewsScreen.route) },
+                            contentDescriptor = "Notification",
                             modifier = Modifier.weight(1f))
-                        IconComponent(painter = R.drawable.ic_time, onClick = { /*TODO*/ }, contentDescriptor = "Recently played",
+                        IconComponent(
+                            painter = R.drawable.ic_time,
+                            onClick = { navController.navigate( Screen.RecentScreen.route ) },
+                            contentDescriptor = "Recently played",
                             modifier = Modifier.weight(1f))
-                        IconComponent(painter = R.drawable.ic_settings, onClick = { /*TODO*/ }, contentDescriptor = "Settings",
+                        IconComponent(
+                            painter = R.drawable.ic_settings,
+                            onClick = { navController.navigate( Screen.SettingsScreen.route )},
+                            contentDescriptor = "Settings",
                             modifier = Modifier.weight(1f))
                     }
                 },
@@ -73,9 +76,6 @@ fun HomeScreen(
                     .padding(top = 20.dp),
                 scrollBehavior = scrollBehavior       // for collapsing appbars
             )
-        },
-        bottomBar = {
-
         },
         containerColor = MaterialTheme.colorScheme.surface,
         modifier = Modifier
