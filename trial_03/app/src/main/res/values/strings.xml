@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">trial_03</string>
+
+<!--    Screen descriptions and headers     -->
+    <string name="HomeScreen">Home</string>
+    <string name="SearchScreen">Search</string>
+    <string name="LibraryScreen">Your Library</string>
+    <string name="PremiumScreen">Premium</string>
+    <string name="SettingsScreen">Settings</string>
+    <string name="RecentScreen">Recently played</string>
+
+<!--    Login screen text buttons   -->
+    <string name="IntroDescription">Truly deadly music</string>
+    <string name="LoginText">Log in</string>
+    <string name="LoginContinue">Continue</string>
+    <string name="LoginFacebook">Log in with facebook</string>
+    <string name="LoginEmail">Log in with email</string>
+
+<!--    Home screen headers texts   -->
+    <string name="Intro">Good morning</string>
+    <string name="RecentList">Recently played</string>
+    <string name="RecEpList">Episodes for you</string>
+    <string name="BestList">Your top mixes</string>
+    <string name="RecMixListList">Made for </string>
+    <string name="PopularArtistsList">Popular artists</string>
+    <string name="FavArtistsList">Your favorite artists</string>
+    <string name="RecArtistsList">User</string>
+    <string name="BestArtistsList">User</string>
+
+<!--    Settings screen headers texts   -->
+    <string name="DarkModeSwitch">Dark mode</string>
+    <string name="ProfileButton">View Profile</string>
+
+
+</resources>
