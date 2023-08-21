@@ -1,7 +1,8 @@
 package cz.matee.nemect.trial_02.navigation
 
+import android.util.Log
 import kotlinx.coroutines.flow.MutableStateFlow
-import cz.matee.nemect.trial_02.navigation.AuthenticationDirections.Default
+import cz.matee.nemect.trial_02.navigation.directions.NavigationDirections.Default
 
 // must be the singleton !
 class NavigationManager {
@@ -11,6 +12,7 @@ class NavigationManager {
     fun navigate (
         directions: NavigationCommand
     ) {
+        Log.d("NavManager","Navigated: ${directions.destination}")
         commands.value = directions
     }
 }

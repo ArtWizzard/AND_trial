@@ -48,6 +48,9 @@ android {
 }
 
 dependencies {
+    def material_version = "1.4.0"
+    implementation "androidx.compose.material:material:$material_version"
+
     def nav_version = "2.6.0"
     implementation "androidx.navigation:navigation-compose:$nav_version"
 

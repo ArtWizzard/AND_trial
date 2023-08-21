@@ -34,7 +34,7 @@ val White80 = Color(0xffcccccc)
 val White70 = Color(0xffb3b3b3)
 val White60 = Color(0xff999999)
 val White50 = Color(0xff808080)
-val White40 = Color(0xf0666666)
+val White40 = Color(0xff666666)
 val White30 = Color(0xff4d4d4d)
 val White20 = Color(0xff333333)
 val White10 = Color(0xff1a1a1a)
@@ -46,3 +46,28 @@ val BTransparent75 = Color(0x40000000)
 val BTransparent50 = Color(0x80000000)
 val BTransparent25 = Color(0xc0000000)
 val BTransparent0 = Color(0xff000000)
+
+
+val Primary = Color(0xff673AB7)
+val DarkPrimary = Color(0xff111111)
+
+val Surface = Color(0xffFADFFF)
+val DarkSurface = Color(0xff231929)
+
+val Background = Color(0xffFFFFFF)
+val DarkBackground = Color(0xff3E3E3E)
+
+//val PrimaryText = Color(0xff000000)
+//val DarkPrimaryText = Color(0xffC6C6C6)
+
+val SecondaryText = Color(0xffB9B9B9)
+val DarkSecondaryText = Color(0xff888888)
+
+val Divider = Color(0xffBDBDBD)
+val DarkDivider = Color(0xffBDBDBD)
+
+val OnPrimary = Color( 0xffffffff)
+val DarkOnPrimary = Color(0xffC6C6C6)
+
+val OnBackground = Color(0xff000000)
+val DarkOnBackground = Color(0xffC6C6C6)
