@@ -1,6 +1,7 @@
-package cz.matee.nemect.trial_02.navigation
+package cz.matee.nemect.trial_02.navigation.directions
 
 import androidx.navigation.NamedNavArgument
+import cz.matee.nemect.trial_02.navigation.NavigationCommand
 
 object AuthenticationDirections {
 
