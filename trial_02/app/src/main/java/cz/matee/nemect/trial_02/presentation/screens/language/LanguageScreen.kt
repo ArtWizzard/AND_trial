@@ -18,6 +18,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cz.matee.nemect.trial_02.R
 import cz.matee.nemect.trial_02.core.database.Language
@@ -144,7 +145,7 @@ fun LanguageCard(
             CommonLargeIcon(
                 onClick = { viewModel.addNewUser() },
                 drawableID = R.drawable.ic_add_outlined_24dp,
-                contentDescriptor = "Add language",
+                contentDescriptor = stringResource(R.string.add_language),
                 color = MaterialTheme.colorScheme.onPrimary
             )
         }
