@@ -1,21 +1,26 @@
-package cz.matee.nemect.trial_02.navigation
+package cz.matee.nemect.trial_02.navigation.directions
 
 import androidx.navigation.NamedNavArgument
+import cz.matee.nemect.trial_02.navigation.NavigationCommand
 
 // implementation of navigation directions - sample
 object NavigationDirections {
 
-    val Authentication = object : NavigationCommand {
+//    val Language = object : NavigationCommand {
+//
+//        override val arguments = emptyList<NamedNavArgument>() // TODO
+//
+//        override val destination = "language"
+//    }
 
-        override val arguments = emptyList<NamedNavArgument>() // TODO
+//    val Home = object : NavigationCommand {
+//
+//        override val arguments = emptyList<NamedNavArgument>() // TODO
+//
+//        override val destination = "home"
+//    }
+    val Home = HomeDirections.root
+    val Language = LanguageDirections.root
+    val Default = DefaultDirections.root
 
-        override val destination = "authentication"
-    }
-
-    val Home = object : NavigationCommand {
-
-        override val arguments = emptyList<NamedNavArgument>() // TODO
-
-        override val destination = "home"
-    }
 }
