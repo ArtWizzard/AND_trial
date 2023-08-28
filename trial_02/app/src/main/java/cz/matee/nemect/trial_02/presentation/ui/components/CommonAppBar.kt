@@ -8,6 +8,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import cz.matee.nemect.trial_02.R
 import cz.matee.nemect.trial_02.presentation.screens.settings.SettingsScreen
 import cz.matee.nemect.trial_02.presentation.ui.components.sideSheet.SideSheet
@@ -30,7 +31,7 @@ fun CommonAppBar(
             CommonIcon(
                 idDrawable = R.drawable.ic_menu_24dp,
                 onclick = onMenuClick,
-                contentDescription = "Menu"
+                contentDescription = stringResource(R.string.menu)
             )
         },
         actions = {
@@ -40,7 +41,7 @@ fun CommonAppBar(
                     sideSheetState.expand()
                     Log.d("settings button","isVisible: ${sideSheetState.isVisible}")
                 },
-                contentDescription = "Settings"
+                contentDescription = stringResource(id = R.string.settings)
             )
         },
         colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary),

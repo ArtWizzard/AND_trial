@@ -33,7 +33,7 @@ class LanguageVM(
 //    val languages = mutableStateListOf("English", "Deutsch")
     val _languages = database.provideLanguages()
 
-    fun navigateToHome() {
+    fun navigateToHome( language: String ) {
         navigationManager.navigate(NavigationDirections.Home)
     }
 

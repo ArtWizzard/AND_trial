@@ -19,6 +19,7 @@ fun Navigation(
     val navController = rememberNavController()
     navigationManager.commands.collectAsState().value.also { command ->
 
+//        Log.d("nav","change ${command.destination}")
         if ( command.destination.isNotEmpty() ) {
 //            Log.d("Navigation","arg: ${command.arguments}\n dir: ${command.destination}")
 
@@ -26,10 +27,11 @@ fun Navigation(
                 Log.d("navController","current: ${navController.currentDestination}")
                 Log.d("navController","backStackEntry: ${navController.currentBackStackEntry?.destination}")
                 Log.d("navController","accessing: ${command.destination}")
+                Log.d("nav", command.destination)
                 navController.navigate(command.destination)
 
             } catch (ex: Exception) {
-                Log.d("exception nav","catched exception: ")
+                Log.d("exception nav","caught exception: ")
                 Log.d("exception nav","cause = ${ex.cause}")
                 Log.d("exception nav","message = ${ex.message}")
                 Log.d("exception nav","stackTrace = ${ex.stackTrace}")

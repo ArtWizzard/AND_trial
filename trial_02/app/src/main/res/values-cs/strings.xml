@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WordFormer</string>
+    <string name="add_language">Přidat jazyk</string>
+    <string name="settings">Nastavení</string>
+    <string name="dark_mode">Tmavý režim</string>
+    <string name="menu">Menu</string>
+    <string name="language">Jazyk</string>
+    <string name="direction_of_translation" translatable="false">Směr překladu</string>
+</resources>

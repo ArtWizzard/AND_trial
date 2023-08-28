@@ -14,7 +14,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment.Companion.End
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import cz.matee.nemect.trial_02.R
 import cz.matee.nemect.trial_02.presentation.ui.components.ColorButton
 import cz.matee.nemect.trial_02.presentation.ui.components.ItemCard
 import cz.matee.nemect.trial_02.presentation.ui.theme.Typography
@@ -30,7 +32,7 @@ fun SettingsScreen() {
             .padding(20.dp)
     ) {
         Text(
-            text = "Settings",
+            text = stringResource(R.string.settings),
             color = MaterialTheme.colorScheme.primary,
             style = Typography.titleLarge
         )
@@ -50,7 +52,7 @@ fun SettingsScreen() {
                     containerColor = itemCardColor
                 ) {
                     Text(
-                        text = "Dark mode",
+                        text = stringResource(R.string.dark_mode),
                         style = Typography.headlineMedium,
                         color = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
