@@ -72,7 +72,7 @@ fun LanguageScreen(
                         .background(MaterialTheme.colorScheme.surface)
                 ) {
                     CommonAppBar(
-                        onMenuClick = {viewModel.navigateToHome()},
+                        onMenuClick = { /*TODO*/ },
                     )
                 }
             },
@@ -113,7 +113,7 @@ fun LanguageCard(
                 .padding(bottom = LargeIconSize / 2)
         ) {
             Text(
-                text = "Language",
+                text = stringResource(R.string.language),
                 color = MaterialTheme.colorScheme.onBackground,
                 style = Typography.headlineLarge,
                 modifier = Modifier
@@ -159,7 +159,7 @@ fun LanguageButton (
 ) {
     OutlinedButton(
         onClick = {
-            viewModel.navigateToHome()
+            viewModel.navigateToHome( language  )
         },
         shape = RoundedCornerShape(25.dp),
         modifier = Modifier
