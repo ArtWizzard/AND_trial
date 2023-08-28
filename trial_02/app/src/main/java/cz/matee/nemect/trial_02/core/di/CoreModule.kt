@@ -4,6 +4,7 @@ import cz.matee.nemect.trial_02.core.database.DB
 import cz.matee.nemect.trial_02.navigation.NavigationManager
 import cz.matee.nemect.trial_02.presentation.screens.language.LanguageVM
 import cz.matee.nemect.trial_02.presentation.screens.home.HomeVM
+import cz.matee.nemect.trial_02.presentation.screens.home.dictionary.DictionaryHomeScreenVM
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
 
@@ -15,6 +16,7 @@ val coreModule get() = module {
     single { DB() }
 
     // View models
+    viewModelOf(::DictionaryHomeScreenVM)
     viewModelOf(::LanguageVM)
     viewModelOf(::HomeVM)
 }
