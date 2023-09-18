@@ -1,4 +1,4 @@
-package cz.matee.nemect.trial_02.presentation.ui.components
+package cz.matee.nemect.trial_02.presentation.ui.components.icons
 
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
