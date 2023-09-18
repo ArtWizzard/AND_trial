@@ -1,7 +1,9 @@
 package cz.matee.nemect.trial_02.core.database
 
+import androidx.compose.runtime.MutableState
+
 data class Language(
-    val name: String,
-    val sign: String,
-    val groups: MutableSet<Group> = mutableSetOf()
+    val name: MutableState<String>,
+    val sign: MutableState<String>,
+    val words: MutableList<Word> = mutableListOf()
 )
