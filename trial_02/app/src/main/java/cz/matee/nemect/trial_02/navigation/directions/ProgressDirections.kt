@@ -1,0 +1,26 @@
+package cz.matee.nemect.trial_02.navigation.directions
+
+import androidx.navigation.NamedNavArgument
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
+import cz.matee.nemect.trial_02.navigation.NavigationCommand
+
+object ProgressDirections {
+
+    val languageID = "lang"
+    val route = "progress/{$languageID}"
+    val dictionaryArguments = listOf(
+        navArgument(languageID) {type = NavType.StringType}
+    )
+
+    fun progress(
+        languageCode: String? = null
+    ) = object : NavigationCommand {
+
+        override val arguments: List<NamedNavArgument>
+            get() = dictionaryArguments
+
+        override val destination: String
+            get() = "progress/$languageCode"
+    }
+}
