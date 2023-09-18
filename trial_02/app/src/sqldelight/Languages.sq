@@ -1,0 +1,4 @@
+CREATE TABLE languages (
+    code varchar(255) PRIMARY KEY NOT NULL,
+    full_name varchar(255) NOT NULL
+);
