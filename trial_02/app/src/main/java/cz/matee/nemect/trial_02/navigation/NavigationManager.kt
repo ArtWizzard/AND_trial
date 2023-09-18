@@ -1,18 +1,17 @@
 package cz.matee.nemect.trial_02.navigation
 
-import android.util.Log
+import cz.matee.nemect.trial_02.navigation.directions.DefaultDirections
 import kotlinx.coroutines.flow.MutableStateFlow
-import cz.matee.nemect.trial_02.navigation.directions.NavigationDirections.Default
+import kotlinx.coroutines.flow.update
 
 // must be the singleton !
 class NavigationManager {
 
-    var commands = MutableStateFlow(Default)
-
+    val commands = MutableStateFlow(DefaultDirections.root)
+//    var commands = MutableStateFlow(HomeDirections.root)
     fun navigate (
         directions: NavigationCommand
     ) {
-        Log.d("NavManager","Navigated: ${directions.destination}")
-        commands.value = directions
+        commands.update { directions }
     }
 }

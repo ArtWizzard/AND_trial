@@ -8,4 +8,5 @@ interface NavigationCommand {
     val arguments: List<NamedNavArgument>
 
     val destination: String
+
 }
