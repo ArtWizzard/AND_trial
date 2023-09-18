@@ -1,11 +1,9 @@
 package cz.matee.nemect.trial_02.presentation.screens.language
 
 import android.app.Activity
-import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -14,7 +12,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -22,10 +19,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cz.matee.nemect.trial_02.R
 import cz.matee.nemect.trial_02.core.database.Language
-import cz.matee.nemect.trial_02.presentation.ui.components.*
-import cz.matee.nemect.trial_02.presentation.ui.components.sideSheet.SideSheet
-import cz.matee.nemect.trial_02.presentation.ui.components.sideSheet.SideSheetValue
-import cz.matee.nemect.trial_02.presentation.ui.components.sideSheet.rememberSideSheetState
+import cz.matee.nemect.trial_02.presentation.ui.components.appBars.CommonAppBar
+import cz.matee.nemect.trial_02.presentation.ui.components.icons.CommonLargeIcon
 import cz.matee.nemect.trial_02.presentation.ui.theme.AppBarRounded
 import cz.matee.nemect.trial_02.presentation.ui.theme.LargeIconSize
 import cz.matee.nemect.trial_02.presentation.ui.theme.Typography
@@ -73,6 +68,7 @@ fun LanguageScreen(
                 ) {
                     CommonAppBar(
                         onMenuClick = { /*TODO*/ },
+                        header = ""
                     )
                 }
             },
@@ -130,7 +126,7 @@ fun LanguageCard(
                     Spacer(modifier = Modifier.height(10.dp))
                     LanguageButton(
                         viewModel = viewModel,
-                        language = language.name)
+                        language = language)
                 }
             }
         }
@@ -155,11 +151,11 @@ fun LanguageCard(
 @Composable
 fun LanguageButton (
     viewModel: LanguageVM,
-    language: String
+    language: Language
 ) {
     OutlinedButton(
         onClick = {
-            viewModel.navigateToHome( language  )
+            viewModel.navigateToDictionary( language.sign.value  )
         },
         shape = RoundedCornerShape(25.dp),
         modifier = Modifier
@@ -170,7 +166,7 @@ fun LanguageButton (
             color = MaterialTheme.colorScheme.outline)
     ) {
         Text(
-            text = language,
+            text = language.name.value,
             color = MaterialTheme.colorScheme.onBackground,
             style = Typography.titleMedium
         )
