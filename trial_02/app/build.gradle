@@ -48,6 +48,9 @@ android {
 }
 
 dependencies {
+    def color_picker_version = "1.0.4"
+    implementation "com.github.skydoves:colorpicker-compose:$color_picker_version"
+
     def material_version = "1.4.0"
     implementation "androidx.compose.material:material:$material_version"
 
