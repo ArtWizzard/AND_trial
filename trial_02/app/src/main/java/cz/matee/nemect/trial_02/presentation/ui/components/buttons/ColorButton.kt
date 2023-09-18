@@ -1,4 +1,4 @@
-package cz.matee.nemect.trial_02.presentation.ui.components
+package cz.matee.nemect.trial_02.presentation.ui.components.buttons
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.size
@@ -10,18 +10,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import cz.matee.nemect.trial_02.presentation.ui.theme.CircleButtonSize
 import cz.matee.nemect.trial_02.presentation.ui.theme.MediumIconSize
 
 @Composable
 fun ColorButton(
     onClick: () -> Unit,
-    color: Color
+    color: Color,
+    modifier: Modifier = Modifier
 ) {
     Button(
         onClick = onClick,
         shape = CircleShape,
-        modifier = Modifier
-            .size(MediumIconSize),
+        modifier = modifier
+            .size(CircleButtonSize),
         colors = ButtonDefaults.buttonColors(containerColor = color),
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
         content = {}

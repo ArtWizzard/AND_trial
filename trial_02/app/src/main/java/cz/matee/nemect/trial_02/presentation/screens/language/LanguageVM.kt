@@ -1,14 +1,9 @@
 package cz.matee.nemect.trial_02.presentation.screens.language
 
-import androidx.compose.material.BottomSheetState
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import cz.matee.nemect.trial_02.core.database.DB
 import cz.matee.nemect.trial_02.navigation.NavigationManager
-import cz.matee.nemect.trial_02.navigation.directions.NavigationDirections
-import kotlinx.coroutines.coroutineScope
+import cz.matee.nemect.trial_02.navigation.directions.DictionaryDirections
 
 class LanguageVM(
     private val navigationManager: NavigationManager,
@@ -33,9 +28,8 @@ class LanguageVM(
 //    val languages = mutableStateListOf("English", "Deutsch")
     val _languages = database.provideLanguages()
 
-    fun navigateToHome( language: String ) {
-        navigationManager.navigate(NavigationDirections.Home)
-    }
+    fun navigateToDictionary( language: String ) {
+        navigationManager.navigate( DictionaryDirections.dictionary(language))    }
 
     fun addNewUser() {
         database.addLanguage("French","FR")

@@ -1,4 +1,4 @@
-package cz.matee.nemect.trial_02.presentation.ui.components
+package cz.matee.nemect.trial_02.presentation.ui.components.buttons
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*

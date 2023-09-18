@@ -45,9 +45,24 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+
+    sqldelight {
+        databases {
+            Database { // This will be the name of the generated database class.
+                packageName = "com.local"
+//                dialect "app.cash.sqldelight:mysql-dialect:2.0.0"
+            }
+        }
+    }
 }
 
 dependencies {
+    def sqld_version = "2.0.0"
+    implementation "app.cash.sqldelight:android-driver:$sqld_version"
+
+    def color_picker_version = "1.0.4"
+    implementation "com.github.skydoves:colorpicker-compose:$color_picker_version"
+
     def material_version = "1.4.0"
     implementation "androidx.compose.material:material:$material_version"
 
@@ -75,3 +90,4 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
 }
+

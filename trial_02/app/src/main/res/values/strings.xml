@@ -8,4 +8,6 @@
     <string name="direction_of_translation" translatable="false">Direction of translation</string>
     <string name="add" translatable="false">ADD</string>
     <string name="nothing_to_find" translatable="false">Nothing to find...\n\nDo you want to create new word?</string>
+    <string name="save">Save</string>
+    <string name="unknown">\???</string>
 </resources>
