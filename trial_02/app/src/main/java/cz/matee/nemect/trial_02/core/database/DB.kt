@@ -7,39 +7,12 @@ import cz.matee.nemect.trial_02.presentation.ui.theme.value.DarkMode
 
 
 class DB {
-    //          VALUES
+    // VALUES
     private val languages = mutableStateListOf(
         Language(mutableStateOf("English"), mutableStateOf("EN")),
         Language(mutableStateOf("Germany"), mutableStateOf("NE")),
         Language(mutableStateOf("Czech"), mutableStateOf("CZ")),
     )
-
-    //    val darkMode = MutableStateFlow(DarkMode.SYSTEM)
-    // How can i provide darkMode state to trigger recomposition when change? Without directly accessing!
-//    val darkMode: MutableState<DarkMode> = mutableStateOf(DarkMode.SYSTEM)
-
-    //          PROVIDERS
-//    fun getDarkModeStream(): StateFlow<DarkMode> {
-//        return flowOf(
-//            darkMode
-//        ) as StateFlow<DarkMode>
-//    }
-//    fun getDarkModeStream(): Flow<DarkMode> {
-//        return flowOf(
-//            darkMode
-//        )
-//    }
-//    fun getDarkModeStream(): MutableStateFlow<DarkMode> {
-//        return darkMode
-//    }
-
-//    fun provideDarkModeState(): DarkMode {
-//        return darkMode.value
-//    }
-//
-//    fun changeDarkMode(mode: DarkMode) {
-//        darkMode.value = mode
-//    }
 
     fun provideLanguages(): MutableList<Language> {
         return languages
@@ -61,7 +34,7 @@ class DB {
     }
 
 
-    //MODIFIERS
+    // MODIFIERS
     fun addLanguage(
         language: String, sign: String
     ) {

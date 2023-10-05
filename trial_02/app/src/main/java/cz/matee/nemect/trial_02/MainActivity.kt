@@ -21,12 +21,6 @@ class MainActivity : ComponentActivity() {
         savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-//            val database: DB = koinInject()
-
-//            val darkMode = remember{
-//                database.darkMode
-//            }
-
             val profileDataSource: ProfileDataSource = koinInject()
             val darkMode by profileDataSource.getDarkModeStream().collectAsState(initial = null)
             darkMode?.let {
@@ -34,10 +28,6 @@ class MainActivity : ComponentActivity() {
                     Navigation()
                 }
             }
-
-//            Trial_02Theme ( darkTheme = isInDarkTheme(darkMode = darkMode.value)) {
-//                Navigation()
-//            }
         }
     }
 

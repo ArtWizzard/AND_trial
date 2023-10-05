@@ -10,22 +10,6 @@ class LanguageVM(
     private val database: DB
 ) : ViewModel() {
 
-    // Testing working
-    // ...
-    // 1
-//    val users = MutableStateFlow<MutableSet<String>>(
-//        mutableSetOf( "Tom", "Klarka" )
-//    )
-    // 2
-//    val _users: MutableStateFlow<MutableSet<String>>
-//        = MutableStateFlow(mutableSetOf( "Tom", "Klarka" ))
-    // 3
-//    val users: MutableState<Users>
-//    = mutableStateOf( Users( mutableSetOf( "Tom", "Klarka" ) ))
-    // 4
-//    val users = mutableListOf("Tom", "Klarka")
-    // 5
-//    val languages = mutableStateListOf("English", "Deutsch")
     val _languages = database.provideLanguages()
 
     fun navigateToDictionary( language: String ) {
@@ -35,7 +19,3 @@ class LanguageVM(
         database.addLanguage("French","FR")
     }
 }
-
-//data class Users (
-//    val users: MutableSet<String>
-//)

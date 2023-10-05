@@ -120,11 +120,6 @@ fun SettingsScreen(
                                 .padding(horizontal = 5.dp)
                                 .fillMaxSize()
                         )
-//                        Divider(
-//                            thickness = 1.dp,
-//                            color = MaterialTheme.colorScheme.outline,
-//                            modifier = Modifier.fillMaxSize(0.9f)
-//                        )
                         SettingCardDivider()
 
                         colorSettings.forEach { colorS ->
@@ -170,7 +165,6 @@ fun ColorPicker(
     isOpen: MutableState<Boolean>
 ) {
     val colorController = rememberColorPickerController()
-//    Log.d("color","${colorSettings.value.color.value}")
 
     Column(
         modifier = Modifier

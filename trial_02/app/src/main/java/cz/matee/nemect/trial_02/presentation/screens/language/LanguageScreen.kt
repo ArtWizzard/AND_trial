@@ -30,20 +30,6 @@ import org.koin.androidx.compose.koinViewModel
 fun LanguageScreen(
     viewModel: LanguageVM = koinViewModel()
 ) {
-    // VM - variables
-    // 1
-//    val users = viewModel.users.collectAsState().value
-    // 2
-//    val users by viewModel._users.collectAsState()
-    // 3
-//    val users = remember{
-//        viewModel.users.value.users
-//    }
-    // 4
-//    val users = remember {
-//        viewModel.users
-//    }
-    // 5
     val languages = remember {
         viewModel._languages
     }
@@ -56,7 +42,6 @@ fun LanguageScreen(
 
     
     // --------------------------------------- DESIGN
-
     Box {
         Scaffold(
             topBar = {

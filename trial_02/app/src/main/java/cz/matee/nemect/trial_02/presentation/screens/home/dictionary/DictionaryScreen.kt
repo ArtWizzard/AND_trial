@@ -90,27 +90,6 @@ fun DictionaryBody(
     LazyColumn (
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-//        item {
-//            CommonButton(
-//                onClick = { Log.d("CommonButton", "Cliked")},
-//                verticalAlignment = Alignment.CenterVertically
-//            ) {
-//                Text(
-//                    text = "EN",
-//                    style = Typography.headlineSmall,
-//                    color = MaterialTheme.colorScheme.onPrimary)
-//                Icon(
-//                    painter = painterResource(id = R.drawable.ic_arrow_forward_48px),
-//                    contentDescription = stringResource(R.string.direction_of_translation),
-//                    modifier = Modifier
-//                        .size(30.dp)
-//                )
-//                Text(
-//                    text = "CZ",
-//                    style = Typography.headlineSmall,
-//                    color = MaterialTheme.colorScheme.onPrimary)
-//            }
-//        }
 
         var lastCharacter = ""
 
