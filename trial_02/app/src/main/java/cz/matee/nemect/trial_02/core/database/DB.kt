@@ -16,7 +16,7 @@ class DB {
 
     //    val darkMode = MutableStateFlow(DarkMode.SYSTEM)
     // How can i provide darkMode state to trigger recomposition when change? Without directly accessing!
-    val darkMode: MutableState<DarkMode> = mutableStateOf(DarkMode.SYSTEM)
+//    val darkMode: MutableState<DarkMode> = mutableStateOf(DarkMode.SYSTEM)
 
     //          PROVIDERS
 //    fun getDarkModeStream(): StateFlow<DarkMode> {
@@ -33,13 +33,13 @@ class DB {
 //        return darkMode
 //    }
 
-    fun provideDarkModeState(): DarkMode {
-        return darkMode.value
-    }
-
-    fun changeDarkMode(mode: DarkMode) {
-        darkMode.value = mode
-    }
+//    fun provideDarkModeState(): DarkMode {
+//        return darkMode.value
+//    }
+//
+//    fun changeDarkMode(mode: DarkMode) {
+//        darkMode.value = mode
+//    }
 
     fun provideLanguages(): MutableList<Language> {
         return languages

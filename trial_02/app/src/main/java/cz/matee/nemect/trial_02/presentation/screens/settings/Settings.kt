@@ -2,15 +2,8 @@ package cz.matee.nemect.trial_02.presentation.screens.settings
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.Divider
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Switch
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -22,8 +15,10 @@ import com.github.skydoves.colorpicker.compose.HsvColorPicker
 import com.github.skydoves.colorpicker.compose.rememberColorPickerController
 import cz.matee.nemect.trial_02.R
 import cz.matee.nemect.trial_02.presentation.ui.components.ItemCard
+import cz.matee.nemect.trial_02.presentation.ui.components.SettingCardDivider
 import cz.matee.nemect.trial_02.presentation.ui.components.buttons.ColorButton
 import cz.matee.nemect.trial_02.presentation.ui.components.buttons.CommonButton
+import cz.matee.nemect.trial_02.presentation.ui.components.buttons.SwitchRadioButton
 import cz.matee.nemect.trial_02.presentation.ui.theme.Typography
 import cz.matee.nemect.trial_02.presentation.ui.theme.value.DarkMode
 import org.koin.androidx.compose.koinViewModel
@@ -32,9 +27,8 @@ import org.koin.androidx.compose.koinViewModel
 fun SettingsScreen(
     viewModel: SettingsVM = koinViewModel()
 ) {
-
-    val darkMode = rememberSaveable {
-        viewModel.darkMode
+    val darkModeValue = remember {
+        viewModel.screenState
     }
 
     val colorPickerIsOpen = remember {
@@ -72,6 +66,7 @@ fun SettingsScreen(
         )
 
         val itemCardColor = MaterialTheme.colorScheme.surface
+
         LazyColumn(
             contentPadding = PaddingValues(vertical = 5.dp),
         ) {
@@ -81,7 +76,7 @@ fun SettingsScreen(
                     },
                     containerColor = itemCardColor
                 ) {
-                    Row {
+                    Column{
                         Text(
                             text = stringResource(R.string.dark_mode),
                             style = Typography.headlineMedium,
@@ -89,16 +84,24 @@ fun SettingsScreen(
                             modifier = Modifier
                                 .padding(horizontal = 5.dp)
                         )
-                        Spacer(modifier = Modifier.weight(1f))
-                        Switch(
-                            checked = darkMode.value == DarkMode.ON,
-                            onCheckedChange = {
-                                if (darkMode.value != DarkMode.ON)
-                                    viewModel.toDarkMode()
-                                else
-                                    viewModel.toLightMode()
-                            },
-                        )
+                        SettingCardDivider()
+
+                        Column( modifier = Modifier.padding(start = 20.dp)
+                        ) {
+                            SwitchRadioButton(
+                                isSelected = darkModeValue.value == DarkMode.SYSTEM,
+                                onClick = {viewModel.onDarkModeSelection(DarkMode.SYSTEM)},
+                                beforeContent = { Text(text = "SYSTEM") })
+                            SwitchRadioButton(
+                                isSelected = darkModeValue.value == DarkMode.OFF,
+                                onClick = {viewModel.onDarkModeSelection(DarkMode.OFF)},
+                                beforeContent = { Text(text = "OFF") })
+                            SwitchRadioButton(
+                                isSelected = darkModeValue.value == DarkMode.ON,
+                                onClick = {viewModel.onDarkModeSelection(DarkMode.ON)},
+                                beforeContent = { Text(text = "ON") })
+                        }
+
                     }
                 }
             }
@@ -117,11 +120,12 @@ fun SettingsScreen(
                                 .padding(horizontal = 5.dp)
                                 .fillMaxSize()
                         )
-                        Divider(
-                            thickness = 1.dp,
-                            color = MaterialTheme.colorScheme.outline,
-                            modifier = Modifier.fillMaxSize(0.9f)
-                        )
+//                        Divider(
+//                            thickness = 1.dp,
+//                            color = MaterialTheme.colorScheme.outline,
+//                            modifier = Modifier.fillMaxSize(0.9f)
+//                        )
+                        SettingCardDivider()
 
                         colorSettings.forEach { colorS ->
                             Row(
