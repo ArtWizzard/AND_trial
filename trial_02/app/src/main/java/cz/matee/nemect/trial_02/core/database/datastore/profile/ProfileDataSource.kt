@@ -1,4 +1,4 @@
-package cz.matee.nemect.trial_02.core.database.profile
+package cz.matee.nemect.trial_02.core.database.datastore.profile
 
 import android.app.Application
 import android.content.Context
