@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.devtools.ksp'
-    id 'app.cash.sqldelight'
 }
 
 android {
@@ -49,8 +48,11 @@ android {
 }
 
 dependencies {
-    def sqld_version = "2.0.0"
-//    implementation "app.cash.sqldelight:android-driver:$sqld_version"
+
+    def room_version = "2.5.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    ksp "androidx.room:room-compiler:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 
     def color_picker_version = "1.0.4"
     implementation "com.github.skydoves:colorpicker-compose:$color_picker_version"
