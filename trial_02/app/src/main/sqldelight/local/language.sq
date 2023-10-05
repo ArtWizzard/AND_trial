@@ -1,0 +1,10 @@
+CREATE TABLE languages (
+    id INTEGER PRIMARY KEY NOT NULL,
+    sign TEXT NOT NULL,
+    name TEXT NOT NULL
+);
+
+INSERT INTO languages (id, sign, name)
+VALUES
+(1,"EN","ENGLISH"),
+(2,"CZ","CZECH");
