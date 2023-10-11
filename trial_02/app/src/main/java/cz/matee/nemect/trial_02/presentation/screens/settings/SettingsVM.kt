@@ -3,8 +3,8 @@ package cz.matee.nemect.trial_02.presentation.screens.settings
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import cz.matee.nemect.trial_02.core.database.datastore.profile.ProfileDataSource
-import cz.matee.nemect.trial_02.core.database.datastore.profile.ProfileScreenState
+import cz.matee.nemect.trial_02.core.data.datastore.profile.ProfileDataSource
+import cz.matee.nemect.trial_02.core.data.datastore.profile.ProfileScreenState
 import cz.matee.nemect.trial_02.presentation.ui.theme.value.DarkMode
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

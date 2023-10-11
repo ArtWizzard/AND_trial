@@ -41,7 +41,7 @@ fun DictionaryScreen(
                 viewModel.onQueryChange( query )
             },
             onSearch = { query ->
-                viewModel.onSearch( query )
+//                viewModel.onSearch( query )
             },
             active = false,
             onActiveChange = {},
@@ -83,9 +83,9 @@ fun DictionaryScreen(
 fun DictionaryBody(
     viewModel: DictionaryScreenVM
 ) {
-    val words = remember {
-        viewModel.words
-    }
+//    val words = remember {
+//        viewModel.words
+//    }
 
     LazyColumn (
         horizontalAlignment = Alignment.CenterHorizontally
@@ -93,38 +93,38 @@ fun DictionaryBody(
 
         var lastCharacter = ""
 
-        if (words.isEmpty()) {
-            item {
-                EmptyDictionaryScreen( viewModel )
-            }
-        } else {
-            items(items = words, key = {word -> word.value.value}) {word ->
-                val currentCharacter = word.value.value.first().toString().uppercase()
-                if ( currentCharacter != lastCharacter ) {
-                    lastCharacter = currentCharacter
-                    Divider(text = currentCharacter)
-                }
-
-                ItemCard(
-                    onClick = { /*TODO*/ },
-                    modifier = Modifier
-                        .padding(vertical = 1.dp)
-                        .heightIn(30.dp)
-                        .fillMaxWidth(DictionaryWidthScaleBody),
-                    shape = RoundedCornerShape(20.dp)
-                ) {
-                    Row {
-                        Text(
-                            text = word.value.value,
-                            style = Typography.headlineSmall,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(5.dp)
-                        )
-                    }
-                }
-            }
-        }
+//        if (words.isEmpty()) {
+//            item {
+//                EmptyDictionaryScreen( viewModel )
+//            }
+//        } else {
+//            items(items = words, key = {word -> word.value.value}) {word ->
+//                val currentCharacter = word.value.value.first().toString().uppercase()
+//                if ( currentCharacter != lastCharacter ) {
+//                    lastCharacter = currentCharacter
+//                    Divider(text = currentCharacter)
+//                }
+//
+//                ItemCard(
+//                    onClick = { /*TODO*/ },
+//                    modifier = Modifier
+//                        .padding(vertical = 1.dp)
+//                        .heightIn(30.dp)
+//                        .fillMaxWidth(DictionaryWidthScaleBody),
+//                    shape = RoundedCornerShape(20.dp)
+//                ) {
+//                    Row {
+//                        Text(
+//                            text = word.value.value,
+//                            style = Typography.headlineSmall,
+//                            modifier = Modifier
+//                                .fillMaxWidth()
+//                                .padding(5.dp)
+//                        )
+//                    }
+//                }
+//            }
+//        }
     }
 }
 
@@ -148,7 +148,7 @@ fun EmptyDictionaryScreen(
             textAlign = TextAlign.Center)
         CommonButton(
             onClick = {
-                viewModel.addWord(searchQuery.value)
+//                viewModel.addWord(searchQuery.value)
             },
             verticalAlignment = Alignment.CenterVertically,
             contentPadding = PaddingValues(0.dp),

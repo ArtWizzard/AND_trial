@@ -7,7 +7,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import cz.matee.nemect.trial_02.core.database.datastore.profile.ProfileDataSource
+import cz.matee.nemect.trial_02.core.data.datastore.profile.ProfileDataSource
 import cz.matee.nemect.trial_02.navigation.Navigation
 import cz.matee.nemect.trial_02.presentation.ui.theme.Trial_02Theme
 import cz.matee.nemect.trial_02.presentation.ui.theme.value.DarkMode
