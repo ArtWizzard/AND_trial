@@ -5,8 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
-import cz.matee.nemect.trial_02.core.database.DB
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import cz.matee.nemect.trial_02.core.data.datastore.profile.ProfileDataSource
 import cz.matee.nemect.trial_02.navigation.Navigation
 import cz.matee.nemect.trial_02.presentation.ui.theme.Trial_02Theme
 import cz.matee.nemect.trial_02.presentation.ui.theme.value.DarkMode
@@ -19,14 +20,12 @@ class MainActivity : ComponentActivity() {
         savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val database: DB = koinInject()
-
-            val darkMode = remember{
-                database.darkMode
-            }
-
-            Trial_02Theme ( darkTheme = isInDarkTheme(darkMode = darkMode.value)) {
-                Navigation()
+            val profileDataSource: ProfileDataSource = koinInject()
+            val darkMode by profileDataSource.getDarkModeStream().collectAsState(initial = null)
+            darkMode?.let {
+                Trial_02Theme(isInDarkTheme(it)) {
+                    Navigation()
+                }
             }
         }
     }

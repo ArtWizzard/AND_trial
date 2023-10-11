@@ -18,42 +18,6 @@ import cz.matee.nemect.trial_02.presentation.ui.theme.BTransparent50
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-
-//// DOESN'T WORK
-//@OptIn(ExperimentalMaterialApi::class)
-//@Composable
-//fun SideSheet1(
-//    onDismiss: () -> Unit,
-//    content: @Composable () -> Unit,
-//    other: @Composable (PaddingValues) -> Unit
-//) {
-//    BottomSheetScaffold(
-//        sheetContent = {
-//            Column(
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .padding(16.dp)
-//            ) {
-//                content()
-//                Spacer(modifier = Modifier.height(16.dp))
-//                Button(
-//                    onClick = {
-//                        onDismiss()
-//                    },
-//                    modifier = Modifier.fillMaxWidth()
-//                ) {
-//                    Text("Close")
-//                }
-//            }
-//        },
-//        sheetShape = androidx.compose.material3.MaterialTheme,
-//        sheetPeekHeight = 0.dp, // Set to zero to make it a side sheet
-//        content = other
-//    )
-//}
-
-// ASK - pointerInput detection
-
 @Composable
 fun SideSheet(
     scope: CoroutineScope,
@@ -95,7 +59,6 @@ fun SideSheet(
 
 @Composable
 fun rememberSideSheetState( value: SideSheetValue): SideSheetState {
-    // ASK - return remembersaveable{} -> fails with crash
     return remember {
         SideSheetState( mutableStateOf (value) )
     }

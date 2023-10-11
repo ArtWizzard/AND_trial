@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.update
 class NavigationManager {
 
     val commands = MutableStateFlow(DefaultDirections.root)
-//    var commands = MutableStateFlow(HomeDirections.root)
     fun navigate (
         directions: NavigationCommand
     ) {

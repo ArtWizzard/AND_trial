@@ -25,7 +25,6 @@ fun CommonBottomAppBar(
         modifier = Modifier
             .clip(RoundedCornerShape(topStart = AppBarRounded, topEnd = AppBarRounded))
             .background(Color.Transparent),
-//        contentColor = MaterialTheme.colorScheme.primary,
         containerColor = MaterialTheme.colorScheme.background,
     ) {
         BottomNavigationIcon(

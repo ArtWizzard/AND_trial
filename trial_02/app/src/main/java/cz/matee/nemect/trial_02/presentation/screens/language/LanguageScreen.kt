@@ -11,14 +11,13 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cz.matee.nemect.trial_02.R
-import cz.matee.nemect.trial_02.core.database.Language
+import cz.matee.nemect.trial_02.core.data.domain.Language
 import cz.matee.nemect.trial_02.presentation.ui.components.appBars.CommonAppBar
 import cz.matee.nemect.trial_02.presentation.ui.components.icons.CommonLargeIcon
 import cz.matee.nemect.trial_02.presentation.ui.theme.AppBarRounded
@@ -30,23 +29,9 @@ import org.koin.androidx.compose.koinViewModel
 fun LanguageScreen(
     viewModel: LanguageVM = koinViewModel()
 ) {
-    // VM - variables
-    // 1
-//    val users = viewModel.users.collectAsState().value
-    // 2
-//    val users by viewModel._users.collectAsState()
-    // 3
-//    val users = remember{
-//        viewModel.users.value.users
+//    val languages = remember {
+//        viewModel._languages
 //    }
-    // 4
-//    val users = remember {
-//        viewModel.users
-//    }
-    // 5
-    val languages = remember {
-        viewModel._languages
-    }
 
     // back button handle - exit
     val activity = (LocalContext.current as? Activity)
@@ -56,7 +41,6 @@ fun LanguageScreen(
 
     
     // --------------------------------------- DESIGN
-
     Box {
         Scaffold(
             topBar = {
@@ -81,10 +65,10 @@ fun LanguageScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Spacer(modifier = Modifier.height(50.dp))
-                LanguageCard(
-                    languages = languages,
-                    viewModel = viewModel
-                )
+//                LanguageCard(
+//                    languages = languages,
+//                    viewModel = viewModel
+//                )
 
             }
         }
@@ -155,7 +139,7 @@ fun LanguageButton (
 ) {
     OutlinedButton(
         onClick = {
-            viewModel.navigateToDictionary( language.sign.value  )
+//            viewModel.navigateToDictionary( language.sign.value  )
         },
         shape = RoundedCornerShape(25.dp),
         modifier = Modifier
@@ -165,10 +149,10 @@ fun LanguageButton (
             1.dp,
             color = MaterialTheme.colorScheme.outline)
     ) {
-        Text(
-            text = language.name.value,
-            color = MaterialTheme.colorScheme.onBackground,
-            style = Typography.titleMedium
-        )
+//        Text(
+//            text = language.name.value,
+//            color = MaterialTheme.colorScheme.onBackground,
+//            style = Typography.titleMedium
+//        )
     }
 }

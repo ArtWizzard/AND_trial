@@ -56,9 +56,6 @@ fun Trial_02Theme(
             val activity  = view.context as Activity
             activity.window.statusBarColor = colorScheme.primary.toArgb()
             ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = darkTheme
-
-//            val window = (view.context as Activity).window
-//            window.statusBarColor = if (darkTheme)  Color.Black.toArgb() else Color.White.toArgb()
         }
     }
 
